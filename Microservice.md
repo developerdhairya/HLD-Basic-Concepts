@@ -1,4 +1,8 @@
-# Microservice
+# High Level System Design Core Concepts
+
+---
+
+## Microservice vs Monolith vs SOA
 
 - It is an architectural development style in which the application is made up of loosely-coupled services handling only small portions of the functionality and data by communicating with each other directly using lightweight protocols like HTTP.
 - In monolithic applications there is usually a single codebase containing all the required functionalities of application.
@@ -20,8 +24,30 @@
 - The fundamental idea of the evolution of microservices from SOA is to refine availability and loose coupling by introducing additional guidelines.
 
 
-### Disaadvantage of Microservice Architecture
+### Disadvantage of Microservice Architecture
 
 - Microservices are costly in terms of network usage.
 - Microservices are less secure relative to monolithic applications due to the inter-services communication over the network.
 - Skilled developers are required to work with microservices architecture.
+
+---
+
+## Scaling
+
+### Vertical vs Horizontal Scaling
+
+- In vertical scaling, we add more power(CPU, RAM, and DISK) to the existing server or using a bigger machine.
+- In vertical scaling servers, scale up or scale down depending on the traffic.
+- In horizonal scaling, we scale by adding more servers to the system by renting a number of machines and dividing the load among them.
+- In horizontal scaling, servers scale out or scale in depending on the traffic.
+
+### Advantages and Disadvantages of Horizontal & Vertical Scaling.
+
+- There is always a limit on vertical scaling as we can only add power upto an extent.
+- There is no limit to horizontal scaling since we can have as many as servers we want and distribute the load among them.
+- Also there is high availability in horizontal scaling as there might be less single point of faliures.
+- However we need skilled engineers for architecting horizontally scaling systems as complexity is higher than Vertical scaling.
+
+
+
+

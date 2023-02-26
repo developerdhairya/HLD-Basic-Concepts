@@ -105,3 +105,7 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 - API=Gateway can also perform various tasks like rate-limiting , authentication & authorization, logging requests/responses, etc
 - A popular exammple of this is Netflix Zuul which acts as both an API-Gateway and Server-Side Load Balancer.
 
+# `Event Driven Microservices`
+
+- Event-driven architectures decouple the producer and consumer of the data.
+- The producer puts the data into a buffer like ()

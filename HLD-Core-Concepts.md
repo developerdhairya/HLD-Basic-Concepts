@@ -71,17 +71,27 @@
 - As the smallest unit of autoscaling in kubernetes is pod, full pod will be scaled horizontally.
 - When EC2 is filled up, we have to scale the EC2 instance too which is called cluster autoscaling.
 
-# `Load Balancer vs API-Gateway vs Reverse Proxy`
 
-### Load Balancer
 
-- When using a scalable microservice, a client needs to be able to route its requests to one of the multiple backend server instances in a group so that no server gets overloaded.
-- Load balancer also increase availability by diverting requests to other servers when a particular server is facing downtime.
-- Load balancers are generally grouped into two categories: Layer 4 and Layer 7.
-- Network load balancers act upon data found in network and transport layer protocols (IP, TCP, FTP, UDP).
-- Application Load balancers distribute requests based upon data found in application layer protocols such as HTTP.
-- Application load balancers can also distribute requests based on application specific data such as HTTP headers, cookies, or data within the application message itself, such as the value of a specific parameter.
-- 
+# `Load Balancer`
+
+- There are Two types of load balancing.
+
+## Client-Side Load Balancing
+
+- The load balancing decision resides with the client who can get the list of registered backend services using service registry/naming server (eg. Netflix Eureka) and then route the request to one of these backend instances using client-side load balancing libraries like Netflix Ribbon(Internally Used By Netflix Zuul).
+
+
+## Server-Side Load balancing
+
+- All backend server instances are registered with a central load balancer which routes the requests to server instances in front of that load balancer using different algorithms such that no server instance gets overloaded.
+- When one server gets down, it distributes its requests to other servers in front of it.
+- AWS ELB is the best example of server side load balancer.
+-  Server Side Load Balancers are further divided into Layer 7 and Layer 4 load balancers.
+- `Application Load balancers` distribute requests based upon data found in application layer protocols such as HTTP(eg. Cookies,Headers etc).
+- `Network load balancers` act upon data found in network and transport layer protocols (IP, TCP, FTP, UDP).
+
+
 
 
 

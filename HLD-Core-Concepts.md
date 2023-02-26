@@ -80,8 +80,8 @@
 
 ### Types of Load Balancers
 
-- `Application Load balancers(Layer 4)` distribute requests based upon data found in application layer protocols such as HTTP(eg. Cookies,Headers etc).
-- `Network load balancers` distribute requests based upon data found in network and transport layer protocols (IP, TCP, FTP, UDP).
+- `Application Load balancers(Layer 7)` distribute requests based upon data found in application layer protocols such as HTTP(eg. Cookies,Headers etc).
+- `Network load balancers(Layer 4)` distribute requests based upon data found in network and transport layer protocols (IP, TCP, FTP, UDP).
 
 ### Client-Side Balancing VS Server-Side Load Balancing
 

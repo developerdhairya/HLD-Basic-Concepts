@@ -79,7 +79,7 @@
 
 ## Client-Side Load Balancing
 
-- The load balancing decision resides with the client who can get the list of registered backend services using service registry/naming server (eg. Netflix Eureka) and then route the request to one of these backend instances using client-side load balancing libraries like Netflix Ribbon(Internally Used By Netflix Zuul).
+- The load balancing decision resides with the client who can get the list of registered backend servers instances using service registry/naming server (eg. Netflix Eureka) and then route the request to one of these backend instances using client-side load balancing libraries like Netflix Ribbon.
 
 
 ## Server-Side Load balancing
@@ -91,7 +91,9 @@
 - `Application Load balancers` distribute requests based upon data found in application layer protocols such as HTTP(eg. Cookies,Headers etc).
 - `Network load balancers` act upon data found in network and transport layer protocols (IP, TCP, FTP, UDP).
 
+# `API Gateway`
 
-
-
+- An API Gateway is single entry point for multiple services within your web or mobile application.
+- It can also perform various tasks, like rate-limiting requests, authenticating users, logging requests/responses, enforcing security policies, etc.
+- A good example of API
 

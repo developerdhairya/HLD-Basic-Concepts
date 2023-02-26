@@ -75,25 +75,26 @@
 
 # `Load Balancer`
 
-- There are Two types of load balancing.
+- When using scalable microservices, a client needs to be able to route its requests to one of the multiple backend server instances and make sure that no server gets overloaded.
+- Also when a server instance faces downtime,LB distributes its requests among other relevant server instances.
 
-## Client-Side Load Balancing
+### Types of Load Balancers
 
-- The load balancing decision resides with the client who can get the list of registered backend servers instances using service registry/naming server (eg. Netflix Eureka) and then route the request to one of these backend instances using client-side load balancing libraries like Netflix Ribbon.
+- `Application Load balancers(Layer 4)` distribute requests based upon data found in application layer protocols such as HTTP(eg. Cookies,Headers etc).
+- `Network load balancers` distribute requests based upon data found in network and transport layer protocols (IP, TCP, FTP, UDP).
+
+### Client-Side Balancing VS Server-Side Load Balancing
+
+- `Client-Side Load balancing`: Client fetches list of registered backend servers instances using service registry/naming server (eg. Netflix Eureka) and then route the request to one of these backend instances using client-side load balancing libraries like Netflix Ribbon.
+
+- `Server-Side Load Balancing`: All backend server instances are registered with a central load balancer(Eg. Netflix Zuul) and are registered with service registry.A client requests this load balancer which then routes the request to one of the server instances.
 
 
-## Server-Side Load balancing
+### Classical Load balancing Algorithms
 
-- All backend server instances are registered with a central load balancer which routes the requests to server instances in front of that load balancer using different algorithms such that no server instance gets overloaded.
-- When one server gets down, it distributes its requests to other servers in front of it.
-- AWS ELB is the best example of server side load balancer.
--  Server Side Load Balancers are further divided into Layer 7 and Layer 4 load balancers.
-- `Application Load balancers` distribute requests based upon data found in application layer protocols such as HTTP(eg. Cookies,Headers etc).
-- `Network load balancers` act upon data found in network and transport layer protocols (IP, TCP, FTP, UDP).
+- **Round Robin Algorithms**: Distributes requests in rotation based on FCFS. 
+- **Least Connection**: Distributes to servers with least active connections.
+- **Resource Based**: Distributes Requests based on resources available with an instance.
+- **Hash Based**: Creates a hash of source/destination IP Address/URL and allocate a server based on that hash.
 
-# `API Gateway`
-
-- An API Gateway is single entry point for multiple services within your web or mobile application.
-- It can also perform various tasks, like rate-limiting requests, authenticating users, logging requests/responses, enforcing security policies, etc.
-- A good example of API
-
+Note: Most of these algorithms can be weighted too(Priority Based)

@@ -111,3 +111,13 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 -  For eg- When a user creates an account,an event is emitted and added to a queue(event channel) which is consumed by mailing services(consumers) when it has enough resources to process the mailing request.
 
 
+# `Message Queues`
+
+- Message queues consist of a publishing service and multiple consumer services that communicate via a queue.
+- However only one of the consumer service processes the message whichever gets free first.
+- For eg- There are multiple mailing servers sending mails from the queue and whichever gets free first will remove our mail event from queue and send the mail.
+- It can be implemented using rabbitMQ
+
+# `Pub/Sub Model`
+- Unlike message queues, in a pub-sub architecture we want all our consuming (subscribing) applications to get at least 1 copy of the message that our publisher posts to an exchange.
+- It can be implemented using rabbitMQ.

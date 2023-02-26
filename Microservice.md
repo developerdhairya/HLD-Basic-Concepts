@@ -48,6 +48,18 @@
 - Also there is high availability in horizontal scaling as there might be less single point of faliures.
 - However we need skilled engineers for architecting horizontally scaling systems as complexity is higher than Vertical scaling.
 
+### Scaling EC2 Instances
 
+- We can scale EC2 instances both vertically and horizontally
+- Suppose we are using t3.micro and there is a traffic boom,then the Application load balancer will spin up a m5.2XLarge and direct all the traffic to it .This is called vertical scaling.
+- Suppose we are using a t3.micro in in EC2 autoscaling group, and there is a traffic boom then AWS will spin up new instances of specified criteria and distribute load among them.
+
+### Scaling AWS Lambda
+
+- AWS Lambda can only scale horizontally.
+- When your lambda function is invoked, AWS Lambda allocates an instance of it to process the event having resources specified by developer.
+- When the function code finishes running, it can handle another request.
+- If the function is invoked again while a request is still being processed, another instance is allocated, which increasing the function's concurrency.
+- However concurrency limit of a particular Lambda function has to be specified by the developer.
 
 

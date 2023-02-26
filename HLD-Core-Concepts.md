@@ -60,6 +60,7 @@
 - When your lambda function is invoked, AWS Lambda allocates an instance of it to process the event having resources specified by developer.
 - When the function code finishes running, it can handle another request.
 - If the function is invoked again while a request is still being processed, another instance is allocated, which increasing the function's concurrency.
-- However concurrency limit of a particular Lambda function has to be specified by the developer.
+- When the labda instances are free, they scale in.
+- However maximum concurrency limit of a particular Lambda function has to be specified by the developer.
 
 

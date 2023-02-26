@@ -63,4 +63,10 @@
 - When the labda instances are free, they scale in.
 - However maximum concurrency limit of a particular Lambda function has to be specified by the developer.
 
+### Scaling Container (Kubernetes)
 
+- In kubernetes, container is running inside a pod which itself is running inside EC2 instance.
+- The pod keeps a track of resource utilization of itsef.
+- When the traffic comes in ,it will scale inside EC2 using Horizontal Pod Autoscaler (HPA).
+- As the smallest unit of autoscaling in kubernetes is pod, full pod will be scaled horizontally.
+- When EC2 is filled up, we have to scale the EC2 instance too which is called cluster autoscaling.

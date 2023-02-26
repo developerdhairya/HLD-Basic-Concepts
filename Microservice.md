@@ -1,6 +1,7 @@
 # Microservice
 
 - It is an architectural development style in which the application is made up of loosely-coupled services handling only small portions of the functionality and data by communicating with each other directly using lightweight protocols like HTTP.
+- In monolithic applications there is usually a single codebase containing all the required functionalities of application.
 
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/HLD%2F1.png?alt=media&token=a3d83192-44f0-47e9-829f-7929dc04b256)
 

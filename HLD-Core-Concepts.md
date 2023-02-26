@@ -98,3 +98,10 @@
 - **Hash Based**: Creates a hash of source/destination IP Address/URL and allocate a server based on that hash.
 
 Note: Most of these algorithms can be weighted too(Priority Based)
+
+# `API-Gateway`
+
+- An API-Gateway is a single point of entry in our system in microservice architecture.
+- API=Gateway can also perform various tasks like rate-limiting , authentication & authorization, logging requests/responses, etc
+- A popular exammple of this is Netflix Zuul which acts as both an API-Gateway and Server-Side Load Balancer.
+

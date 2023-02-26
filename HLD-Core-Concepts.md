@@ -76,7 +76,7 @@
 # `Load Balancer`
 
 - When using scalable microservices, a client needs to be able to route its requests to one of the multiple backend server instances and make sure that no server gets overloaded.
-- Also when a server instance faces downtime,LB distributes its requests among other relevant server instances.
+- Also when a server instance faces downtime , LB distributes its requests among other relevant server instances.
 
 ### Types of Load Balancers
 

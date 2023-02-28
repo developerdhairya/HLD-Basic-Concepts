@@ -124,22 +124,3 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 
 
 
-<!-- # `Event Driven Microservice Architecture`
-
--  An event-driven system consist of typically consists of event emitters (or agents), event consumers (or sinks), and event channels.
--  For eg- When a user creates an account,an event is emitted and added to a queue(event channel) which is consumed by mailing and analytics services(consumers) which then processes it when have enough resources to process the event.
- -->
-
-<!-- ## Queuing Architecture
-
-- Message queues consist of a publishing service and multiple consumer services that communicate via a queue.
-- However only one of the consumer service processes the message whichever gets free first.
-- For eg- There are multiple mailing servers sending mails from the queue and whichever gets free first will remove our mail event from queue and send the mail.
-- It can be implemented using rabbitMQ
-
-# `Publish Subscribe Architecture`
-- Unlike message queues, in a pub-sub architecture we want all our consuming (subscribing) applications to get at least 1 copy of the message that our publisher posts to an exchange.
-- It can be implemented using rabbitMQ.
-
-# `Streaming Queues`
-- In a messaging queue, once a message is delivered, it's gone forever. To reprocess a message, you have to have a backup, like a batch layer, so that you can put it back into the queue.  -->

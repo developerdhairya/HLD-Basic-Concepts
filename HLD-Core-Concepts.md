@@ -135,3 +135,7 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 
 Note: In messaging, we generally can't reprocess a message as it is deleted but we can do that using backup(Eg-batch layer) puting it back into queue from the backup. 
 
+# `Web Sockets`
+
+- WebSocket is a communications protocol for a persistent, bi-directional, full duplex TCP connection from a user's web browser to a server.
+- 

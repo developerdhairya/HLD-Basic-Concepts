@@ -138,4 +138,4 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 # `Web Sockets`
 
 - WebSocket is a communications protocol for a persistent, bi-directional, full duplex TCP connection from a user's web browser to a server.
-- 
+

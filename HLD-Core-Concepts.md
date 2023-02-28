@@ -189,7 +189,7 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 - MFU
 
 Must Read:
-- [Redis Cache vs In-Memory Cache](https://stackoverflow.com/questions/19477821/redis-cache-vs-using-memory-directly#:~:text=Redis%20can%20be%20accessed%20by,done%20in%20a%20separate%20process.)
+- [Why is in-memory cache not used directly in application?](https://stackoverflow.com/questions/19477821/redis-cache-vs-using-memory-directly#:~:text=Redis%20can%20be%20accessed%20by,done%20in%20a%20separate%20process.)
 - [System Design of Cache](https://java-design-patterns.com/patterns/caching/#explanation)
 
 

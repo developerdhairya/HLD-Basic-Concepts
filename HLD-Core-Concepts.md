@@ -138,4 +138,6 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 # `Web Sockets`
 
 - WebSocket is a communications protocol for a persistent, bi-directional, full duplex TCP connection from a user's web browser to a server.
+- A WebSocket connection is initiated by sending a WebSocket handshake request from a browser's HTTP connection to a server to upgrade the connection.
 
+![](https://assets.website-files.com/5ff66329429d880392f6cba2/617a911c0c264f7bfbe7be5f_websocket%20work.png)

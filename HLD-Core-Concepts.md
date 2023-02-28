@@ -129,7 +129,7 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 - In streaming, a single message is not enough to give the complete picture as we need to analyse whole stream of messages to understant the acual message.
 -  We maintain a distributed log file and consumers move backward and forward within that file to re-process messages they've already received on command.
 - In simple words, streaming is the passing of event log as they occur.
-- For eg- When you visit amazon,all your clicks are put into stream to generate user data.
+- For eg- When you visit amazon,all your clicks are put into stream to generate user data as a 1-2 clicks are usually not enough to get user preferences.
 - It can be implemented using kafka and is also available on AWS as Amazon Kinesis.
 
 

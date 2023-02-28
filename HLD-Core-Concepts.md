@@ -170,7 +170,15 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 - **Caching Database Querry**: Hashed version of query is used as the cache key. A big limitation of this is *cache invalidation* as when one piece of data changes (for example, a table row) we need to invalidate all cached queries which include that row. 
 - **Caching Object**: In objects caching pattern, you store the data as an object as you do in your application code.Your class can assemble a dataset from your database and then you can store the instance of the class or the assembled dataset in the cache
 
-## Ca
+## Caching Stratagies
+
+- Cache-aside
+- Read-through
+- Write-through
+- Write-back
+- Write-around
+
+
 
 Must Read:
 - [Redis Cache vs In-Memory Cache](https://stackoverflow.com/questions/19477821/redis-cache-vs-using-memory-directly#:~:text=Redis%20can%20be%20accessed%20by,done%20in%20a%20separate%20process.)

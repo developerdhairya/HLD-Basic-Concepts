@@ -164,6 +164,10 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 - These caches are basically in-memory key-value stores like Memcached and Redis.
 - As the data is held in RAM, it is much faster than databases where data is stored on disk.
 
+Must Read:
+
+- [Redis Cache vs In-Memory Cache](https://stackoverflow.com/questions/19477821/redis-cache-vs-using-memory-directly#:~:text=Redis%20can%20be%20accessed%20by,done%20in%20a%20separate%20process.)
+
 ## Patterns of Application Level Caching
  
 - **Caching Database Querry**: Hashed version of query is used as the cache key. A big limitation of this is *cache invalidation* as when one piece of data changes (for example, a table row) we need to invalidate all cached queries which include that row. 

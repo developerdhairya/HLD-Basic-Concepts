@@ -170,15 +170,11 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 - **Caching Database Querry**: Hashed version of query is used as the cache key. A big limitation of this is *cache invalidation* as when one piece of data changes (for example, a table row) we need to invalidate all cached queries which include that row. 
 - **Caching Object**: In objects caching pattern, you store the data as an object as you do in your application code.Your class can assemble a dataset from your database and then you can store the instance of the class or the assembled dataset in the cache
 
-## Caching Stratagies
+## Caching Stratagies(Redis)
 
-- Cache-aside
-- Read-through
-- Write-through
-- Write-back
-- Write-around
+- **Cache-Aside(Lazy Loading)**: It is a reactive approach.User first checks cache for data and returns it if found else it will get the data from the database and update it in cache.
+- **Write-Through**: It is a proactive approach.When user updates the data in database and it also updates the data in cache as a proactive measure.It is often used with lazy-loading for read. 
 
-[**Detailed Read on Caching Strategies**](https://www.prisma.io/dataguide/managing-databases/introduction-database-caching)
 
 ## Cache Eviction Policies
 

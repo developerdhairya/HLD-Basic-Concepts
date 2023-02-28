@@ -155,22 +155,25 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 - **CDN Caching**: CDN's like cloudfare caches static files like HTML, CSS, JavaScript, image, video, etc 
 - **Web Server Caching**: Web servers can also cache requests, returning responses without having to contact application servers.
 - **Database Caching**: Databses by default also have some ibuilt caching mechanisms.
-- **Application Caching**: Application Caching is described below.
+- **Application Level Caching**: *Explained Below*
 
 
 # `Application Level Caching`
-
 - In application caching, the cache is placed between application and data stores.
 - These caches are basically in-memory key-value stores like Memcached and Redis.
 - As the data is held in RAM, it is much faster than databases where data is stored on disk.
 
-Must Read:
+**Application Caching is the most important and will be reffered as caching in the text from here**
 
+## Ways of Caching
+ 
+- **Caching Database Querry**: Hashed version of query is used as the cache key. A big limitation of this is *cache invalidation* as when one piece of data changes (for example, a table row) we need to invalidate all cached queries which include that row. 
+- **Caching Object**: In objects caching pattern, you store the data as an object as you do in your application code.Your class can assemble a dataset from your database and then you can store the instance of the class or the assembled dataset in the cache
+
+## Ca
+
+Must Read:
 - [Redis Cache vs In-Memory Cache](https://stackoverflow.com/questions/19477821/redis-cache-vs-using-memory-directly#:~:text=Redis%20can%20be%20accessed%20by,done%20in%20a%20separate%20process.)
 - [System Design of Cache](https://java-design-patterns.com/patterns/caching/#explanation)
 
-## Patterns of Application Level Caching
- 
-- **Caching Database Querry**: Hashed version of query is used as the cache key. A big limitation of this is *cache invalidation* as when one piece of data changes (for example, a table row) we need to invalidate all cached queries which include that row. 
 
-- **Object Caching**: In objects caching pattern, you store the data as an object as you do in your application code.Your class can assemble a dataset from your database and then you can store the instance of the class or the assembled dataset in the cache

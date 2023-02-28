@@ -113,14 +113,25 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 - In a message-queue model, the publisher pushes messages to a queue where 1 or more subscriber can listen to a particular queue.
 - In this each message is processed by only one consumer which then deletes it from the queue.
 - Due to this it is also called pull model.
+- It can be implemented by using RabbitMQ and also availible on AWS as Amazon SNS.
 
 ## Event Driven Architecture using Pub/Sub
 
 - An event-driven system consist of typically consists of event emitters (or agents), event consumers (or sinks), and event channels.
 - In Publiser/Subscriber model,which is an event-driven architecture,a publisher publishes a message to a topic and all the subscribers of that topic receives 1 copy of that message.
+- It can be implemented by using RabbitMQ and also availible on AWS as Amazon SQS.
 
 
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/xyz.png?alt=media&token=828bc2e9-96c7-4ce9-9638-863e02bf0246)
 
+# `Streaming`
 
+- In streaming, a single message is not enough to give the complete picture as we need to analyse whole stream of messages to understant the acual message.
+-  We maintain a distributed log file and consumers move backward and forward within that file to re-process messages they've already received on command.
+- In simple words, streaming is the passing of event log as they occur.
+- For eg- When you visit amazon,all your clicks are put into stream to generate user data.
+- It can be implemented using kafka and is also available on AWS as Amazon Kinesis.
+
+
+Note: In messaging, we generally can't reprocess a message as it is deleted but we can do that using backup(Eg-batch layer) puting it back into queue from the backup. 
 

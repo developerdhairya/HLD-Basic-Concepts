@@ -6,13 +6,13 @@ I am making this repo so that you don't have to go and search topics at differen
 
 **NOTE**
 
-The content I am providing is not compeletely owned by me. I am just integrating everything from different documentation/tutorials and serving it here.
+Some of the images I am providing with content are not owned by me.
 
 ---
 
 # Get Started
 
-- To get started, go to Index.md file and follow along.
+- To get started, go to the HLD-Core-Concepts.md file and follow along.
 
 
 **PS\:** Please don't forget to star the repo as it motivates me to do more for the open source community. :star:. Happy Learning :sunglasses:

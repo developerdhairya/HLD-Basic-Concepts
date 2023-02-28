@@ -141,3 +141,28 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 - A WebSocket connection is initiated by sending a WebSocket handshake request from a browser's HTTP connection to a server to upgrade the connection.
 
 ![](https://assets.website-files.com/5ff66329429d880392f6cba2/617a911c0c264f7bfbe7be5f_websocket%20work.png)
+
+# `Caching`
+
+- Caching is the process of storing and retriving data in/form the cache.
+- Cache is a temporary storage area relatively small in size with faster access time.
+- Caching improves latency and can reduce the load on your servers and databases.
+
+## Caching at Different levels
+
+- **Client Side Caching**: Caches are located on the client side like OS or Browser.
+  - It also covers the caches that aew located on the servers which are acting as a client for someone like Reverse-Proxy.
+- **CDN Caching**: CDN's like cloudfare caches static files like HTML, CSS, JavaScript, image, video, etc 
+- **Web Server Caching**: Web servers can also cache requests, returning responses without having to contact application servers.
+- **Database Caching**: Databses by default also have some ibuilt caching mechanisms.
+- **Application Caching**: Application Caching is described below.
+
+
+# `Application Level Caching`
+
+- In application caching, the cache is placed between application and data stores.
+- These caches are basically in-memory key-value stores like Memcached and Redis.
+- As the data is held in RAM, it is much faster than databases where data is stored on disk.
+
+## Patterns of Application Level Caching
+ 

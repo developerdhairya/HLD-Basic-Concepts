@@ -102,22 +102,44 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 # `API-Gateway`
 
 - An API-Gateway is a single point of entry in our system in microservice architecture.
-- API=Gateway can also perform various tasks like rate-limiting , authentication & authorization, logging requests/responses, etc
+- API Gateway can also perform various tasks like rate-limiting , authentication & authorization, logging requests/responses, etc
 - A popular exammple of this is Netflix Zuul which acts as both an API-Gateway and Server-Side Load Balancer.
 
-# `Event Driven Microservice Architecture`
+
+# `Message Queue Driven Architecture vs Event Driven Architecture`
+
+## Message Queue Driven Architecture
+
+- In a message-queue model, the publisher pushes messages to a queue where 1 or more subscriber can listen to a particular queue.
+- In this each message is processed by only one consumer which then deletes it from the queue.
+- Due to this it is also called pull model.
+
+## Event Driven Architecture using Pub/Sub
+
+- An event-driven system consist of typically consists of event emitters (or agents), event consumers (or sinks), and event channels.
+- In Publiser/Subscriber model,which is an event-driven architecture,a publisher publishes a message to a topic and all the subscribers of that topic receives 1 copy of that message.
+
+
+![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/xyz.png?alt=media&token=828bc2e9-96c7-4ce9-9638-863e02bf0246)
+
+
+
+<!-- # `Event Driven Microservice Architecture`
 
 -  An event-driven system consist of typically consists of event emitters (or agents), event consumers (or sinks), and event channels.
--  For eg- When a user creates an account,an event is emitted and added to a queue(event channel) which is consumed by mailing services(consumers) when it has enough resources to process the mailing request.
+-  For eg- When a user creates an account,an event is emitted and added to a queue(event channel) which is consumed by mailing and analytics services(consumers) which then processes it when have enough resources to process the event.
+ -->
 
-
-# `Message Queues`
+<!-- ## Queuing Architecture
 
 - Message queues consist of a publishing service and multiple consumer services that communicate via a queue.
 - However only one of the consumer service processes the message whichever gets free first.
 - For eg- There are multiple mailing servers sending mails from the queue and whichever gets free first will remove our mail event from queue and send the mail.
 - It can be implemented using rabbitMQ
 
-# `Pub/Sub Model`
+# `Publish Subscribe Architecture`
 - Unlike message queues, in a pub-sub architecture we want all our consuming (subscribing) applications to get at least 1 copy of the message that our publisher posts to an exchange.
 - It can be implemented using rabbitMQ.
+
+# `Streaming Queues`
+- In a messaging queue, once a message is delivered, it's gone forever. To reprocess a message, you have to have a backup, like a batch layer, so that you can put it back into the queue.  -->

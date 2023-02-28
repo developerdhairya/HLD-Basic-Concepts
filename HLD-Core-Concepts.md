@@ -166,3 +166,8 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 
 ## Patterns of Application Level Caching
  
+- **Caching Database Querry**
+ - Hashed version of query is used as the cache key.
+ - A big limitation of this is *cache invalidation* as when one piece of data changes (for example, a table row) we need to invalidate all cached queries which include that row. 
+
+- **Object Caching**: In objects caching pattern, you store the data as an object as you do in your application code.Your class can assemble a dataset from your database and then you can store the instance of the class or the assembled dataset in the cache

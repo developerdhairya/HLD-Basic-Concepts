@@ -178,7 +178,15 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 - Write-back
 - Write-around
 
+[**Detailed Read on Caching Strategies**](https://www.prisma.io/dataguide/managing-databases/introduction-database-caching)
 
+## Cache Eviction Policies
+
+- LRU
+- LFU
+- Least Time To Live (LTTL)
+- MRU
+- MFU
 
 Must Read:
 - [Redis Cache vs In-Memory Cache](https://stackoverflow.com/questions/19477821/redis-cache-vs-using-memory-directly#:~:text=Redis%20can%20be%20accessed%20by,done%20in%20a%20separate%20process.)

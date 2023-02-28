@@ -173,7 +173,8 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 ## Caching Stratagies(Redis)
 
 - **Cache-Aside(Lazy Loading)**: It is a reactive approach.User first checks cache for data and returns it if found else it will get the data from the database and update it in cache.
-- **Write-Through**: It is a proactive approach.When user updates the data in database and it also updates the data in cache as a proactive measure.It is often used with lazy-loading for read. 
+- **Write-Through**: It is a proactive approach to maintain data-integrity.When user updates the data in database and it also updates the data in cache as a proactive measure.It is often used with lazy-loading for read. 
+- Using cache aside without without write-through may lead to short term inconsistency, however with it there are chances of cache being filled with infrequently-accessed data so it is also recommended to add expiration time while write through.
 
 
 ## Cache Eviction Policies

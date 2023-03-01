@@ -189,4 +189,10 @@ Must Read:
 - [Why is in-memory cache not used directly in application?](https://stackoverflow.com/questions/19477821/redis-cache-vs-using-memory-directly#:~:text=Redis%20can%20be%20accessed%20by,done%20in%20a%20separate%20process.)
 - [System Design of Cache](https://java-design-patterns.com/patterns/caching/#explanation)
 
+# `Hashing`
 
+- A process of feeding a message of any length into a hash function to produce a fixed size string.
+- Same input will always create a same output.
+- A little change in input will create vastly different output so that guessing is not possible.
+- In system design, databases needs to be divided into multiple partitions and shards and hashing is useful in this.
+- 

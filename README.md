@@ -1,4 +1,4 @@
-# HLD-Comprehensive-Guide for Beginners (Under Construction)
+# HLD-Basic-Concepts for Beginners (Under Construction)
 
 This is going to be the comprehensive guide learn HLD from very basics to intermediate-level. I will try to share each and every required concepts so it can also benefit others.
 

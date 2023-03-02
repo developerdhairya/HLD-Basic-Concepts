@@ -218,4 +218,7 @@ Must Read:
 - In consistent hashing, we hash both objects and servers and map them on a hash-ring.We move clockwise and assign all objects to the next comming server.If a system fails,all objects will be assigned to the next available server.
 - One disadvantage of consistent hashing is that the servers and objects are distributed unevenly and there might be chances that many objects are assigned to one server leading to server failiure in a row and downfall of system.
 - Therefore an optimization on consistent hashing is making each server appear at mutiple locations on ring using multiple virtual nodes of a server on hash-ring  insted a of a single real server.
-- As the virtual nodes increases,the distribution of object becomesamore balanced as when a single server fails,failing all its virtual nodes,the objects are distributed among multiple servers not a single as previously was.
+- We use multiple hash functions on a single node to assign multiple different positions to it on hash-ring.
+- As the virtual nodes increases,the distribution of object becomesamore balanced as when a single server fails naturally failing all its virtual nodes,the dependent objects are distributed among multiple servers not a single as previously it was.
+- Consistent hahing used commonly in distributed systems ranging from partitioning in Amazon DynamoDB to Load balancers. 
+- ![Source Article](https://betterprogramming.pub/load-balancers-and-consistent-hashing-in-6-minutes-b5fc460aea4e)

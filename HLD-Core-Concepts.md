@@ -189,10 +189,22 @@ Must Read:
 - [Why is in-memory cache not used directly in application?](https://stackoverflow.com/questions/19477821/redis-cache-vs-using-memory-directly#:~:text=Redis%20can%20be%20accessed%20by,done%20in%20a%20separate%20process.)
 - [System Design of Cache](https://java-design-patterns.com/patterns/caching/#explanation)
 
-# `Hashing`
+# `Hashing Vs Encryption`
+
+## Hashing
 
 - A process of feeding a message of any length into a hash function to produce a fixed size string.
-- Same input will always create a same output.
+- Hashing is a *one-way* function as it is impossible to decrypt a hash to get origional password.
+- Same input will always create a same output with same hashing algorithm.
 - A little change in input will create vastly different output so that guessing is not possible.
-- In system design, databases needs to be divided into multiple partitions and shards and hashing is useful in this.
-- 
+<!-- - In system design, databases needs to be divided into multiple partitions and shards and hashing is useful in this. -->
+
+## Encryption
+- Encryption is process of encoding plaintext to cipher text which can only be decoded by authorized personnel.
+- Unlike hashing,encryption is a *two-way* process as it is possible to get back the plaintext with the key.
+- Encryption is of two types:
+ - **Symmetric Encryption**: Symmetric encryption uses the same key for both encryption and decryption.This type of encryption is faster, but less secure.
+ - **Asymmetric Encryption**: Asymmetric encryption uses two different keys, a private and public key, for encryption and decryption respectively.Public key is available to anyone and is uses to determine authenticity of data.
+
+
+# `Encryption`

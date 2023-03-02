@@ -234,3 +234,6 @@ Must Read:
 - **Horizontal/Range-based** : Data is split based on the ranges of a particular attribute of an entity.However it might lead to uneven distribution.
 - **Vertical**: We split the data column wise to different machine making it somewhat difficult when we want to process inter-related data.
 - **Directory-Based Sharding**: We maintain a lookup service or lookup table for the original database and lookup to each entity using shard key from lookup table.
+
+*PS*:
+- Directory-based sharding is much more flexible than range based and key-based sharding because we are free to use any algorithm to assign to data entries to shards and it is easy to add shards dynamically in this approach.

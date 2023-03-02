@@ -249,6 +249,8 @@ Must Read:
 - In practical scenario,if we have distributed systems, partition tolerance must be high leaving one choose between availability and consistency.
 - [Source Article](https://medium.com/system-design-blog/cap-theorem-1455ce5fc0a0) 
 
+*Brain Strom*: If two EC2-instances are running inter-dependent tasks in different regions, are they hihly available or fault tolerant?
+
 # `Disaster Recovery`
 
 - **RPO**:Recovery Point Objective sates the maximum time interval, transactions of which are allowed to be lost during a disaster.

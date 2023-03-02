@@ -237,3 +237,15 @@ Must Read:
 
 *PS*:
 - Directory-based sharding is much more flexible than range based and key-based sharding because we are free to use any algorithm to assign to data entries to shards and it is easy to add shards dynamically in this approach.
+
+# `CAP Theorem`
+
+![](https://miro.medium.com/v2/resize:fit:640/format:webp/1*rxTP-_STj-QRDt1X9fdVlA.png)
+
+- **Consistency**: Every read receives the most recent writes or an error.
+- **Availabilty**: In an available system, if our client sends a request to a server and the server has not crashed, then the server must respond to the client.
+- **Partition Tolerance**: The system continues to operate even if messages are being dropped(or delayed) by the network between nodes.
+\
+- CAP Theorem states it is impossible for a distributed system to simultaneously gurantee more than two out of the above three.
+- In practical scenario, partition tolerance always must be there leaving one choose between availability and consistency.
+- [Source Article](https://medium.com/system-design-blog/cap-theorem-1455ce5fc0a0) 

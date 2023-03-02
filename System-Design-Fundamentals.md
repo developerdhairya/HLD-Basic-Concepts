@@ -246,7 +246,7 @@ Must Read:
 - **Partition Tolerance**: The system continues to operate even if messages are being dropped(or delayed) by the network between nodes.
 \
 - CAP Theorem states it is impossible for a distributed system to simultaneously gurantee more than two out of the above three.
-- In practical scenario, partition tolerance always must be there leaving one choose between availability and consistency.
+- In practical scenario,if we have distributed systems, partition tolerance must be high leaving one choose between availability and consistency.
 - [Source Article](https://medium.com/system-design-blog/cap-theorem-1455ce5fc0a0) 
 
 # `Disaster Recovery`

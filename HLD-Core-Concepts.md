@@ -207,4 +207,4 @@ Must Read:
  - **Asymmetric Encryption**: Asymmetric encryption uses two different keys, a private and public key, for encryption and decryption respectively.Public key is available to anyone and is uses to determine authenticity of data.
 
 
-# `Encryption`
+# `Consistent Hashing`

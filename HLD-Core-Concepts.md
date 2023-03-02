@@ -208,3 +208,11 @@ Must Read:
 
 
 # `Consistent Hashing`
+
+- Consistent Hashing is used in distributed systems to keep hash-table independent on number of servers.
+- This allows servers and objects to scale by minimize key relocation.
+- In simple hashing techniques we assign servers to objects by hashing the object parameter and distrubuting it among servers via modulous function but this technique will fail as we add a new server or a server fails.
+- In consistent hashing, we hash both objects and servers and map them on a hash-ring.We move clockwise and assign all objects to the next comming server.If a system fails,all objects will be assigned to the next available server.
+- One disadvantage of consistent hashing is that the servers and objects are distributed unevenly and there might be chances that many objects are assigned to one server leading to server failiure in a row and downfall of system.
+- Therefore an optimization on consistent hashing is making each server appear at mutiple locations on ring using multiple virtual nodes of a server on hash-ring  insted a of a single real server.
+- As the virtual nodes increases,the distribution of object becomesamore balanced as when a single server fails,failing all its virtual nodes,the objects are distributed among multiple servers not a single as previously was.

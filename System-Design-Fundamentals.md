@@ -235,8 +235,7 @@ Must Read:
 - **Vertical**: We split the data column wise to different machine making it somewhat difficult when we want to process inter-related data.
 - **Directory-Based Sharding**: We maintain a lookup service or lookup table for the original database and lookup to each entity using shard key from lookup table.
 
-*PS*:
-- Directory-based sharding is much more flexible than range based and key-based sharding because we are free to use any algorithm to assign to data entries to shards and it is easy to add shards dynamically in this approach.
+*PS*: Directory-based sharding is much more flexible than range based and key-based sharding because we are free to use any algorithm to assign to data entries to shards and it is easy to add shards dynamically in this approach.
 
 # `CAP Theorem`
 
@@ -249,3 +248,12 @@ Must Read:
 - CAP Theorem states it is impossible for a distributed system to simultaneously gurantee more than two out of the above three.
 - In practical scenario, partition tolerance always must be there leaving one choose between availability and consistency.
 - [Source Article](https://medium.com/system-design-blog/cap-theorem-1455ce5fc0a0) 
+
+# `Disaster Recovery`
+
+- **RPO**:Recovery Point Objective sates the maximum time interval, transactions of which are allowed to be lost during a disaster.
+  - RPO can also be stated as maximum frequency of backup. 
+  - RPO can be reduced by increasing the frequency of the backups.
+  - To achieve almost zero RPO, we need to have real-time data replication to a different region.
+/
+- **RTO**: It is defined as the maximum amount of time application is down after a disaster.

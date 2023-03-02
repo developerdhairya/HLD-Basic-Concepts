@@ -221,4 +221,16 @@ Must Read:
 - We use multiple hash functions on a single node to assign multiple different positions to it on hash-ring.
 - As the virtual nodes increases,the distribution of object becomesamore balanced as when a single server fails naturally failing all its virtual nodes,the dependent objects are distributed among multiple servers not a single as previously it was.
 - Consistent hahing used commonly in distributed systems ranging from partitioning in Amazon DynamoDB to Load balancers. 
-- ![Source Article](https://betterprogramming.pub/load-balancers-and-consistent-hashing-in-6-minutes-b5fc460aea4e)
+- [Source Article](https://betterprogramming.pub/load-balancers-and-consistent-hashing-in-6-minutes-b5fc460aea4e)
+
+# `Sharding vs Partitioning`
+
+- Sharding is a technique to horizonally scale database by splitting data from a database into multiple database instances(Nodes) either in horizonal or vertical manner.
+- Partitioning is a technique to divide data from a database vertically into different tables inside a single machine.
+
+## Sharding Techniques
+
+- **Key-Based/Hash-Based**: A key is passed into a hash-function and is mapped to a database instance.A more optimized way is consistent hashing.
+- **Horizontal/Range-based** : Data is split based on the ranges of a particular attribute of an entity.However it might lead to uneven distribution.
+- **Vertical**: We split the data column wise to different machine making it somewhat difficult when we want to process inter-related data.
+- **Directory-Based Sharding**: We maintain a lookup service or lookup table for the original database and lookup to each entity using shard key from lookup table.

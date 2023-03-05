@@ -249,7 +249,7 @@ Must Read:
 - In practical scenario,if we have distributed systems, partition tolerance must be high leaving one choose between availability and consistency.
 - [Source Article](https://medium.com/system-design-blog/cap-theorem-1455ce5fc0a0) 
 
-*Brain Strom*: If two EC2-instances are running inter-dependent tasks in different regions, are they hihly available or fault tolerant?
+*Brain Strom*: If two EC2-instances are running inter-dependent tasks in different regions, are they highly available or fault tolerant?
 
 # `Disaster Recovery`
 
@@ -259,3 +259,7 @@ Must Read:
   - To achieve almost zero RPO, we need to have real-time data replication to a different region.
 /
 - **RTO**: It is defined as the maximum amount of time application is down after a disaster.
+
+# `ACID VS BASE`
+- [**Acid-vs-Base-Short-Detaled-Article-GFG**](https://www.geeksforgeeks.org/acid-model-vs-base-model-for-database/)
+

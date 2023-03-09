@@ -12,7 +12,7 @@ Some of the images I am providing with content are not owned by me.
 
 # Get Started
 
-- To get started, go to the [System-Design-Fundamentals.md](./System-Design-Fundamentals.md) file and follow along.
+- To get started, go to the [High-Level-System-Design.md](./High-Level-System-Design.md) file and follow along.
 
 
 **PS\:** Please don't forget to star the repo as it motivates me to do more for the open source community. :star:. Happy Learning :sunglasses:

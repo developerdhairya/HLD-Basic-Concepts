@@ -23,10 +23,10 @@
   - Multiple Inheritence `Interface Only`
   - Hybrid Inheritence `Interface Only`
 
-*PS: Multiple/Hybrid Inheritence is not ssupported in java classes because of ambiguity.*
+*PS: Multiple/Hybrid Inheritence is not supported in java classes because of ambiguity.*
 
-![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fa1.png?alt=media&token=1bab9e2c-7a75-4f11-9d19-6a4b12a59d33)
+![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fa2.png?alt=media&token=af4e2005-e3e7-496f-8a4b-eea2826153cd)
 
 ### **Polymorphism**
-- One thing multiple forms.
 
+![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fa3.png?alt=media&token=0a18126f-35c9-44d0-bf35-074e323e9413)

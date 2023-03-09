@@ -30,3 +30,11 @@
 ## **Polymorphism**
 
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fa3.png?alt=media&token=0a18126f-35c9-44d0-bf35-074e323e9413)
+
+## **Abstraction**
+
+- Abstraction is providing abstract view of functionality of class by hiding method implementation and providing only method defination.
+- It is implemented using Abstract classes and Interfaces.
+
+![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fa4.png?alt=media&token=e307c94b-56c8-40b8-87cf-fbe8cd3d6b75)
+

@@ -30,7 +30,6 @@
 ## **Polymorphism**
 
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fa3.png?alt=media&token=0a18126f-35c9-44d0-bf35-074e323e9413)
-![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fa5.png?alt=media&token=c925ae89-3347-41a5-adbc-ab505d3253a6)
 
 ## **Abstraction**
 
@@ -39,3 +38,12 @@
 
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fa4.png?alt=media&token=e307c94b-56c8-40b8-87cf-fbe8cd3d6b75)
 
+---
+
+## Binding in java
+
+- Binding refers to the process of converting identifiers (such as variable and performance names) into addresses.
+- For functions, it means that matching the call with the right function definition by the compiler
+- It takes place either at compile time or at runtime.
+
+![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fa5.png?alt=media&token=8ae8e2aa-d887-49f9-a3ce-5a9aa9fb2dea)

@@ -263,3 +263,15 @@ Must Read:
 # `ACID VS BASE`
 - [**Acid-vs-Base-Short-Detaled-Article-GFG**](https://www.geeksforgeeks.org/acid-model-vs-base-model-for-database/)
 
+# `JSON Web Tokens`
+
+- JSON Web Tokens is an industry-standard method for representing claims securely between two parties.
+- It is widely used in stateless authentication and authorization.
+- JWT consists of 3 Parts which  are **Header**,**Payload** and **Signature** joined with a (.) which are encoded in BASE64(Easily decoded without keys unlike hashes).
+- **Header**: It consists of type of token and the algorithm used to sign the token(HMAC256/SHA256).
+- **Payload**: It consists of token data and expiration time.
+- **Signature**: BASE64-Encoded Header & Payload joined with (.) are hashed with a secret key.When server wants to verify JWT, it again hashes Header and Payload to generate a signature and matches it with signaure attached.
+
+Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't generate a signature(which is verified) from Header and Payload without Secret Key making it highly secure.
+
+![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/jwt.png?alt=media&token=97c23079-8c8a-474b-a0f6-a91e4d1e0c7a)

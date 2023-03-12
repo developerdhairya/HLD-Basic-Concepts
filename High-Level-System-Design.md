@@ -275,3 +275,17 @@ Must Read:
 Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't generate a signature(which is verified) from Header and Payload without Secret Key making it highly secure.
 
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/jwt.png?alt=media&token=97c23079-8c8a-474b-a0f6-a91e4d1e0c7a)
+
+# `O-Auth 2.0`
+
+- O-Auth2.0 is a mechanism that allow third parties to gain limited access of a resources on a service on behalf of resource owner.
+
+### Workflow
+
+- Client authorization request to authorization server and receives authorization grant if genuine user.
+- As authorization server has indentified the resource owner,client sends a request with authorization grant to authorization server to issue access token with limited access.
+- Access token is returned by authorization server to client.
+- Client sends this access token to its Web Server.*(Missing in image)*
+- Web server sends this access token with each request to resource server and successfully accesses resources posing as resource owner. 
+
+![](https://i.ytimg.com/vi/CPbvxxslDTU/maxresdefault.jpg)

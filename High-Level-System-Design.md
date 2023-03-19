@@ -289,3 +289,6 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 - Web server sends this access token with each request to resource server and successfully accesses resources posing as resource owner. 
 
 ![](https://i.ytimg.com/vi/CPbvxxslDTU/maxresdefault.jpg)
+
+# `Nginx as Reverse Proxy`
+- ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/Screenshot%20from%202023-03-19%2015-05-08.png?alt=media&token=0fea203c-5c22-4dba-8c7f-85ba2e41583b)

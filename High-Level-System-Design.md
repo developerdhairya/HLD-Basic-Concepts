@@ -75,7 +75,7 @@
 
 # `Load Balancer`
 
-- When using scalable microservices, a client needs to be able to route its requests to one of the multiple backend server instances and make sure that no server gets overloaded.
+- When we want our single microservice to scale horizontally to cater traffic at peak hour, we set up a load balancer in front of it to f=divide load among the microservices which are providing same functionalities.
 - Also when a server instance faces downtime , LB distributes its requests among other relevant server instances.
 
 ### Types of Load Balancers
@@ -103,7 +103,8 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 
 - An API-Gateway is a single point of entry in our system in microservice architecture.
 - API Gateway can also perform various tasks like rate-limiting , authentication & authorization, logging requests/responses, etc
-- A popular exammple of this is Netflix Zuul which acts as both an API-Gateway and Server-Side Load Balancer.
+- A popular example of this is Netflix Zuul which acts as both an API-Gateway and Server-Side Load Balancer.
+- API Gateways usually interact with service registries to determine request destination.
 
 
 # `Message Queue Driven Architecture vs Event Driven Architecture`
@@ -126,14 +127,13 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 
 # `Streaming`
 
+- Streaming is passing of event log in distributed log file as they occur so that receiver can move backward and forward within the file to process and  re-process messages.
 - In streaming, a single message is not enough to give the complete picture as we need to analyse whole stream of messages to understant the acual message.
--  We maintain a distributed log file and consumers move backward and forward within that file to re-process messages they've already received on command.
-- In simple words, streaming is the passing of event log as they occur.
 - For eg- When you visit amazon,all your clicks are put into stream to generate user data as a 1-2 clicks are usually not enough to get user preferences.
 - It can be implemented using kafka and is also available on AWS as Amazon Kinesis.
 
 
-Note: In messaging, we generally can't reprocess a message as it is deleted but we can do that using backup(Eg-batch layer) puting it back into queue from the backup. 
+Fun Fact: In messaging, we generally can't reprocess a message as it is deleted but we can do that using backup(Eg-batch layer) puting it back into queue from the backup. 
 
 # `Web Sockets`
 
@@ -148,7 +148,7 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 - Cache is a temporary storage area relatively small in size with faster access time.
 - Caching improves latency and can reduce the load on your servers and databases.
 
-## Caching at Different levels
+<!-- ## Caching at Different levels
 
 - **Client Side Caching**: Caches are located on the client side like OS or Browser.
   - It also covers the caches that aew located on the servers which are acting as a client for someone like Reverse-Proxy.
@@ -156,7 +156,7 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 - **Web Server Caching**: Web servers can also cache requests, returning responses without having to contact application servers.
 - **Database Caching**: Databses by default also have some ibuilt caching mechanisms.
 - **Application Level Caching**: *Explained Below*
-
+ -->
 
 # `Application Level Caching`
 - In application caching, the cache is placed between application and data stores.
@@ -167,23 +167,15 @@ Note: In messaging, we generally can't reprocess a message as it is deleted but 
 
 ## Ways of Caching
  
-- **Caching Database Querry**: Hashed version of query is used as the cache key. A big limitation of this is *cache invalidation* as when one piece of data changes (for example, a table row) we need to invalidate all cached queries which include that row. 
+- **Caching Database Querry (ashed Version)**: Hashed version of query is used as the cache key. A big limitation of this is *cache invalidation* as when one piece of data changes (for example, a table row) we need to invalidate all cached queries which include that row. 
 - **Caching Object**: In objects caching pattern, you store the data as an object as you do in your application code.Your class can assemble a dataset from your database and then you can store the instance of the class or the assembled dataset in the cache
 
 ## Caching Stratagies(Redis)
 
-- **Cache-Aside(Lazy Loading)**: It is a reactive approach.User first checks cache for data and returns it if found else it will get the data from the database and update it in cache.
-- **Write-Through**: It is a proactive approach to maintain data-integrity.When user updates the data in database and it also updates the data in cache as a proactive measure.It is often used with lazy-loading for read. 
+- **Cache-Aside(Lazy Loading)**: User first checks cache for data and returns it if found else it will get the data from the database and update it in cache.
+- **Write-Through**: When user updates the data in database and it also updates the data in cache as a proactive measure.It is often used with lazy-loading for read. 
 - Using cache aside without without write-through may lead to short term inconsistency, however with it there are chances of cache being filled with infrequently-accessed data so it is also recommended to add expiration time while write through.
-
-
-## Cache Eviction Policies
-
-- LRU
-- LFU
-- Least Time To Live (LTTL)
-- MRU
-- MFU
+- There are multiple cache eviction policies like LRU,LFU,MRU,MFU
 
 Must Read:
 - [Why is in-memory cache not used directly in application?](https://stackoverflow.com/questions/19477821/redis-cache-vs-using-memory-directly#:~:text=Redis%20can%20be%20accessed%20by,done%20in%20a%20separate%20process.)
@@ -206,22 +198,6 @@ Must Read:
  - **Symmetric Encryption**: Symmetric encryption uses the same key for both encryption and decryption.This type of encryption is faster, but less secure.
  - **Asymmetric Encryption**: Asymmetric encryption uses two different keys, a private and public key, for encryption and decryption respectively.Public key is available to anyone and is uses to determine authenticity of data.
 
-
-# `Consistent Hashing`
-
-- Consistent Hashing is used in distributed systems to keep hash-table independent on number of servers.
-- This allows servers and objects to scale by minimize key relocation.
-
-### Implementation
-
-- In simple hashing techniques we assign servers to objects by hashing the object parameter and distrubuting it among servers via modulous function but this technique will fail as we add a new server or a server fails.
-- In consistent hashing, we hash both objects and servers and map them on a hash-ring.We move clockwise and assign all objects to the next comming server.If a system fails,all objects will be assigned to the next available server.
-- One disadvantage of consistent hashing is that the servers and objects are distributed unevenly and there might be chances that many objects are assigned to one server leading to server failiure in a row and downfall of system.
-- Therefore an optimization on consistent hashing is making each server appear at mutiple locations on ring using multiple virtual nodes of a server on hash-ring  insted a of a single real server.
-- We use multiple hash functions on a single node to assign multiple different positions to it on hash-ring.
-- As the virtual nodes increases,the distribution of object becomesamore balanced as when a single server fails naturally failing all its virtual nodes,the dependent objects are distributed among multiple servers not a single as previously it was.
-- Consistent hahing used commonly in distributed systems ranging from partitioning in Amazon DynamoDB to Load balancers. 
-- [Source Article](https://betterprogramming.pub/load-balancers-and-consistent-hashing-in-6-minutes-b5fc460aea4e)
 
 # `Sharding vs Partitioning`
 
@@ -292,3 +268,19 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 
 # `Nginx as Reverse Proxy`
 - ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/Screenshot%20from%202023-03-19%2015-05-08.png?alt=media&token=0fea203c-5c22-4dba-8c7f-85ba2e41583b)
+
+# `Consistent Hashing`
+
+- Consistent Hashing is used in distributed systems to keep hash-table independent on number of servers.
+- This allows servers and objects to scale by minimize key relocation.
+
+### Implementation
+
+- In simple hashing techniques we assign servers to objects by hashing the object parameter and distrubuting it among servers via modulous function but this technique will fail as we add a new server or a server fails.
+- In consistent hashing, we hash both objects and servers and map them on a hash-ring.We move clockwise and assign all objects to the next comming server.If a system fails,all objects will be assigned to the next available server.
+- One disadvantage of consistent hashing is that the servers and objects are distributed unevenly and there might be chances that many objects are assigned to one server leading to server failiure in a row and downfall of system.
+- Therefore an optimization on consistent hashing is making each server appear at mutiple locations on ring using multiple virtual nodes of a server on hash-ring  insted a of a single real server.
+- We use multiple hash functions on a single node to assign multiple different positions to it on hash-ring.
+- As the virtual nodes increases,the distribution of object becomesamore balanced as when a single server fails naturally failing all its virtual nodes,the dependent objects are distributed among multiple servers not a single as previously it was.
+- Consistent hahing used commonly in distributed systems ranging from partitioning in Amazon DynamoDB to Load balancers. 
+- [Source Article](https://betterprogramming.pub/load-balancers-and-consistent-hashing-in-6-minutes-b5fc460aea4e)

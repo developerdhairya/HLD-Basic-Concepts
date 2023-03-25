@@ -11,9 +11,8 @@
 
 ### Principals of Microservices
 
-- Single responsibility
+- Single responsibility & Design for failure
 - Built around business capabilities
-- Design for failure
 
 ### Microservice vs SOA
 

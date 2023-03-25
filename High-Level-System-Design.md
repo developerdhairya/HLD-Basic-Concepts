@@ -100,10 +100,10 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 
 # `API-Gateway`
 
-- An API-Gateway is a single point of entry in our system in microservice architecture.
-- API Gateway can also perform various tasks like rate-limiting , authentication & authorization, logging requests/responses, etc
+- An API-Gateway is entry point in our system and is reponsible for directing the request to the specific microservices by interacting with service registry.
+- It can also perform rate-limiting , authentication & authorization, logging requests/responses, etc
 - A popular example of this is Netflix Zuul which acts as both an API-Gateway and Server-Side Load Balancer.
-- API Gateways usually interact with service registries to determine request destination.
+<!-- - API Gateways usually interact with service registries to determine request destination. -->
 
 
 # `Message Queue Driven Architecture vs Event Driven Architecture`
@@ -126,10 +126,9 @@ Note: Most of these algorithms can be weighted too(Priority Based)
 
 # `Streaming`
 
-- Streaming is passing of event log in distributed log file as they occur so that receiver can move backward and forward within the file to process and  re-process messages.
-- In streaming, a single message is not enough to give the complete picture as we need to analyse whole stream of messages to understant the acual message.
-- For eg- When you visit amazon,all your clicks are put into stream to generate user data as a 1-2 clicks are usually not enough to get user preferences.
-- It can be implemented using kafka and is also available on AWS as Amazon Kinesis.
+- Streaming is passing of event log in distributed log file as they occur so that receiver can move backward and forward within the file to process and  re-process stream of messages to get the actual message.
+- For eg- When you visit amazon,all your clicks are put into Amazon Kinesis stream to determine user behaviour as a 1-2 clicks are usually not enough to get user preferences.
+- It is also widely used in social networking sites.
 
 
 Fun Fact: In messaging, we generally can't reprocess a message as it is deleted but we can do that using backup(Eg-batch layer) puting it back into queue from the backup. 
@@ -143,8 +142,7 @@ Fun Fact: In messaging, we generally can't reprocess a message as it is deleted 
 
 # `Caching`
 
-- Caching is the process of storing and retriving data in/form the cache.
-- Cache is a temporary storage area relatively small in size with faster access time.
+- Cache is a temporary storage area relatively small in size with faster access time which stores the frequently accesses data.
 - Caching improves latency and can reduce the load on your servers and databases.
 
 <!-- ## Caching at Different levels

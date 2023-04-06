@@ -281,3 +281,9 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 - As the virtual nodes increases,the distribution of object becomesamore balanced as when a single server fails naturally failing all its virtual nodes,the dependent objects are distributed among multiple servers not a single as previously it was.
 - Consistent hahing used commonly in distributed systems ranging from partitioning in Amazon DynamoDB to Load balancers. 
 - [Source Article](https://betterprogramming.pub/load-balancers-and-consistent-hashing-in-6-minutes-b5fc460aea4e)
+
+
+# `Hive vs Spark vs Handoop`
+
+- Spark is a real-time data analyzer, whereas Hadoop is a processing engine for very large data sets that do not fit in memory.
+-  Hive is a data warehouse system, like SQL, that is built on top of Hadoop.

@@ -287,3 +287,9 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 
 - Spark is a real-time data analyzer, whereas Hadoop is a processing engine for very large data sets that do not fit in memory.
 -  Hive is a data warehouse system, like SQL, that is built on top of Hadoop.
+
+# `Apache Kafka`
+
+- Kafka is a distributed event streaming and stream-processing platform.
+- The project aims to provide a unified, high-throughput, low-latency platform for handling real-time data feeds.
+![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/100.png?alt=media&token=dd2f656a-cf5c-49b0-9364-c26b8090e397)

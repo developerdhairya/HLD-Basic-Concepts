@@ -299,6 +299,32 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*M771g7YBz35xJ1lKdRLFhQ.png)
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/010.png?alt=media&token=882dbdcd-b638-464a-95e7-5e259b7e127b)
 
+# `Big Data Optimized Formats`
+
+### Avro
+
+- It is a row based format.
+- Each record consists of header(stored as JSON) and data(stored as binary).
+- Header is used to parse binary data and extract field informations
+- Good for compressing data and minimizing storage and network bandwidth requirements.
+
+### ORC
+
+- It is a column based format.
+- An ORC file contains stripes of data where each stripe holds data for a column or a set of columns.
+- A stripe consists of data,index of rows in it and a footer holding statistical information like(count,sum,max,min) of each column.
+
+### Parquet
+
+- It is a hybrid format as it stores data in form of row groups
+- A parquet file includes column meta data for each row group.
+- An application can use this column metadata to quickly locate the correct row group.
+- Parquet specializes in storing and processing nested data types efficiently and also supports very efficient compression and encoding schemes.
+
+![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*3g4RfWdSWKcGs56cNDtJjA.png)
+![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*EzPLuhgFw2hbsQHTP7lEvA.png)
+![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*bsjh1Stj8xK-jKHXjU3NQg.png)
+
 # `Apache Handoop`
 
 - Collection of open-source utility softwares that uses a network of many computers to solve problems involving massive data and requiring high computation parallely and quickly.
@@ -311,7 +337,3 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 ### MapReduce Model
 
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/0010.png?alt=media&token=fb532574-6fa6-43a0-b702-69275972ed14)
-
-### File Format in Handoop
-
-- [ORC vs AVRO vs Parquet](https://forum.huawei.com/enterprise/en/orc-parquet-and-avro/thread/892823-893#:~:text=ORC%20indexes%20are%20used%20only,much%20more%20efficient%20than%20writing.)

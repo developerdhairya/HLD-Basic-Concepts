@@ -341,7 +341,7 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 # `Apache Handoop`
 
 - Collection of open-source utility softwares that uses a network of many computers to solve problems involving massive data and requiring high computation parallely and quickly.
-- It provides framework for BigData processing and distributed storage using the MapReduce programming model.
+- It provides framework for BigData batch processing and distributed storage using the MapReduce programming model.
 
 ### Apache Handoop Architecture
 
@@ -350,3 +350,20 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 ### MapReduce Model
 
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/0010.png?alt=media&token=fb532574-6fa6-43a0-b702-69275972ed14)
+
+# `Apache Spark`
+
+
+- Like Apache Hadoop is a Data Processing framework for Big Data Analysis.
+- Unlike Apache Handoop, Apache Spark is a low latency computing and can process data interactively and also has many other features like Apache Spark which only provides efficient batch processing.
+- Apache Spark can run 100x faster than handoop on memory and 10x on disk.
+- It is more expensive due to in-memory processing.
+- Unlike Apache Handoop, the process in Apache Spark has to be restarted from begining in case of faliure.
+
+![](https://cdn.analyticsvidhya.com/wp-content/uploads/2020/11/spark_Architecture.png)
+
+# `Apache Strom`
+- Apache Storm is a distributed stream processing computation framework.
+- Storm performs task parallel computations whereas Spark performs data parallel computations
+
+![](https://qph.cf2.quoracdn.net/main-qimg-502e33cbe601661b685d19732b48daa9-pjlq)

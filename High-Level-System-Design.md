@@ -311,3 +311,7 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 ### MapReduce Model
 
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/0010.png?alt=media&token=fb532574-6fa6-43a0-b702-69275972ed14)
+
+### File Format in Handoop
+
+- [ORC vs AVRO vs Parquet](https://forum.huawei.com/enterprise/en/orc-parquet-and-avro/thread/892823-893#:~:text=ORC%20indexes%20are%20used%20only,much%20more%20efficient%20than%20writing.)

@@ -301,20 +301,20 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 
 # `Big Data Optimized Formats`
 
-### Avro
+## Avro
 
 - It is a row based format.
 - Each record consists of header(stored as JSON) and data(stored as binary).
 - Header is used to parse binary data and extract field informations
 - Good for compressing data and minimizing storage and network bandwidth requirements.
 
-### ORC
+## ORC
 
 - It is a column based format.
 - An ORC file contains stripes of data where each stripe holds data for a column or a set of columns.
 - A stripe consists of data,index of rows in it and a footer holding statistical information like(count,sum,max,min) of each column.
 
-### Parquet
+## Parquet
 
 - It is a hybrid format as it stores data in form of row groups
 - A parquet file includes column meta data for each row group.
@@ -324,6 +324,12 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*3g4RfWdSWKcGs56cNDtJjA.png)
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*EzPLuhgFw2hbsQHTP7lEvA.png)
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*bsjh1Stj8xK-jKHXjU3NQg.png)
+
+## Use-Case Comparison
+
+![](https://www.datanami.com/wp-content/uploads/2018/05/Nexla-File-Format.png)
+
+
 
 # `Apache Handoop`
 

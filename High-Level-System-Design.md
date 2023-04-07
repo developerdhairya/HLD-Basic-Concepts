@@ -283,11 +283,11 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 - [Source Article](https://betterprogramming.pub/load-balancers-and-consistent-hashing-in-6-minutes-b5fc460aea4e)
 
 
-# `Hive vs Spark vs Handoop`
+<!-- # `Hive vs Spark vs Handoop`
 
 - Spark is a real-time data analyzer, whereas Hadoop is a processing engine for very large data sets that do not fit in memory.
 -  Hive is a data warehouse system, like SQL, that is built on top of Hadoop.
-
+ -->
 # `Apache Kafka`
 
 - Kafka is a distributed event streaming and stream-processing platform.
@@ -329,6 +329,13 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 
 ![](https://www.datanami.com/wp-content/uploads/2018/05/Nexla-File-Format.png)
 
+# `Data Engineering (OLAP)`
+
+- OLAP stands for Online Analytical Processing.
+- An extract, transform, and load (ETL) process copies data from files and OLTP databases into a data warehouse that is optimized for read activity.
+- Data in the data warehouse may be aggregated and loaded into an online analytical processing (OLAP) model, or cube.
+- Aggregated numeric values (measures) from fact tables are calculated for intersections of dimensions from dimension tables. For example, sales revenue might be totaled by date, customer, and product.
+- This data in the data lake, data warehouse, and analytical model can be queried to produce reports, visualizations, and dashboards.
 
 
 # `Apache Handoop`

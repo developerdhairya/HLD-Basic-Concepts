@@ -298,3 +298,16 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/100.png?alt=media&token=dd2f656a-cf5c-49b0-9364-c26b8090e397)
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*M771g7YBz35xJ1lKdRLFhQ.png)
 ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/010.png?alt=media&token=882dbdcd-b638-464a-95e7-5e259b7e127b)
+
+# `Apache Handoop`
+
+- Collection of open-source utility softwares that uses a network of many computers to solve problems involving massive data and requiring high computation parallely and quickly.
+- It provides framework for BigData processing and distributed storage using the MapReduce programming model.
+
+### Apache Handoop Architecture
+
+![](https://phoenixnap.com/kb/wp-content/uploads/2021/04/hadoop-ecosystem-layers.png)
+
+### MapReduce Model
+
+![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/0010.png?alt=media&token=fb532574-6fa6-43a0-b702-69275972ed14)

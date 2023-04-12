@@ -361,9 +361,10 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 - Unlike Apache Handoop, the process in Apache Spark has to be restarted from begining in case of faliure.
 
 ![](https://cdn.analyticsvidhya.com/wp-content/uploads/2020/11/spark_Architecture.png)
-
+<!-- 
 # `Apache Strom`
 - Apache Storm is a distributed stream processing computation framework.
 - [Storm performs task parallel computations whereas Spark performs data parallel computations](https://www.tutorialspoint.com/data-parallelism-vs-task-parallelism)
 
 ![](https://qph.cf2.quoracdn.net/main-qimg-502e33cbe601661b685d19732b48daa9-pjlq)
+ -->

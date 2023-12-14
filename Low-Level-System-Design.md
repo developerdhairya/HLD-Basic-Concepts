@@ -59,48 +59,47 @@
 ## State Machine
 
 ```java
-// Define the CharacterState interface
-interface CharacterState {
-    void handleEvent(GameCharacter character, CharacterEvent event);
+// Define the VendingMachineState interface
+interface VendingMachineState {
+    void handleEvent(VendingMachine vendingMachine, VendingMachineEvent event);
 }
 
-// Define the GameCharacter class
-class GameCharacter {
-    private CharacterState currentState;
+// Define the VendingMachineEvent enum
+enum VendingMachineEvent {
+    INSERT_COIN,
+    SELECT_ITEM,
+    DISPENSE_ITEM,
+    CANCEL
+}
 
-    public GameCharacter(CharacterState initialState) {
+// Define the VendingMachine class
+class VendingMachine {
+    private VendingMachineState currentState;
+
+    public VendingMachine(VendingMachineState initialState) {
         this.currentState = initialState;
     }
 
-    public void setCurrentState(CharacterState state) {
+    public void setCurrentState(VendingMachineState state) {
         this.currentState = state;
     }
 
-    public void handleEvent(CharacterEvent event) {
+    public void handleEvent(VendingMachineEvent event) {
         currentState.handleEvent(this, event);
     }
 }
 
-// Define the CharacterEvent enum
-enum CharacterEvent {
-    START_WALKING,
-    STOP_WALKING,
-    START_ATTACKING,
-    STOP_ATTACKING
-}
-
 // Define the IdleState class
-class IdleState implements CharacterState {
+class IdleState implements VendingMachineState {
     @Override
-    public void handleEvent(GameCharacter character, CharacterEvent event) {
+    public void handleEvent(VendingMachine vendingMachine, VendingMachineEvent event) {
         switch (event) {
-            case START_WALKING:
-                character.setCurrentState(new WalkingState());
-                System.out.println("Character starts walking");
+            case INSERT_COIN:
+                vendingMachine.setCurrentState(new AcceptingCoinsState());
+                System.out.println("Coins accepted. Select an item.");
                 break;
-            case START_ATTACKING:
-                character.setCurrentState(new AttackingState());
-                System.out.println("Character starts attacking");
+            case CANCEL:
+                System.out.println("No action in Idle state.");
                 break;
             default:
                 // No transition for other events in the IDLE state
@@ -109,58 +108,72 @@ class IdleState implements CharacterState {
     }
 }
 
-// Define the WalkingState class
-class WalkingState implements CharacterState {
+// Define the AcceptingCoinsState class
+class AcceptingCoinsState implements VendingMachineState {
     @Override
-    public void handleEvent(GameCharacter character, CharacterEvent event) {
+    public void handleEvent(VendingMachine vendingMachine, VendingMachineEvent event) {
         switch (event) {
-            case STOP_WALKING:
-                character.setCurrentState(new IdleState());
-                System.out.println("Character stops walking");
+            case SELECT_ITEM:
+                vendingMachine.setCurrentState(new SelectingItemState());
+                System.out.println("Item selected. Confirm to dispense.");
                 break;
-            case START_ATTACKING:
-                character.setCurrentState(new AttackingState());
-                System.out.println("Character starts attacking while walking");
+            case CANCEL:
+                vendingMachine.setCurrentState(new IdleState());
+                System.out.println("Transaction canceled. Insert coins to start again.");
                 break;
             default:
-                // No transition for other events in the WALKING state
+                // No transition for other events in the ACCEPTING_COINS state
                 break;
         }
     }
 }
 
-// Define the AttackingState class
-class AttackingState implements CharacterState {
+// Define the SelectingItemState class
+class SelectingItemState implements VendingMachineState {
     @Override
-    public void handleEvent(GameCharacter character, CharacterEvent event) {
+    public void handleEvent(VendingMachine vendingMachine, VendingMachineEvent event) {
         switch (event) {
-            case STOP_ATTACKING:
-                character.setCurrentState(new IdleState());
-                System.out.println("Character stops attacking");
+            case DISPENSE_ITEM:
+                vendingMachine.setCurrentState(new DispensingItemState());
+                System.out.println("Item dispensed. Thank you!");
                 break;
-            case STOP_WALKING:
-                character.setCurrentState(new IdleState());
-                System.out.println("Character stops walking and attacks");
+            case CANCEL:
+                vendingMachine.setCurrentState(new IdleState());
+                System.out.println("Transaction canceled. Insert coins to start again.");
                 break;
             default:
-                // No transition for other events in the ATTACKING state
+                // No transition for other events in the SELECTING_ITEM state
                 break;
         }
     }
 }
 
-// Main class to demonstrate the character state machine
-public class CharacterStateMachineDemo {
+// Define the DispensingItemState class
+class DispensingItemState implements VendingMachineState {
+    @Override
+    public void handleEvent(VendingMachine vendingMachine, VendingMachineEvent event) {
+        switch (event) {
+            case CANCEL:
+                System.out.println("Cannot cancel. Item dispensing in progress.");
+                break;
+            default:
+                // No transition for other events in the DISPENSING_ITEM state
+                break;
+        }
+    }
+}
+
+// Main class to demonstrate the vending machine state machine
+public class VendingMachineStateMachineDemo {
     public static void main(String[] args) {
-        // Create a game character with an initial state (Idle)
-        GameCharacter character = new GameCharacter(new IdleState());
+        // Create a vending machine with an initial state (Idle)
+        VendingMachine vendingMachine = new VendingMachine(new IdleState());
 
         // Simulate events
-        character.handleEvent(CharacterEvent.START_WALKING); // Character starts walking
-        character.handleEvent(CharacterEvent.STOP_WALKING);  // Character stops walking
-        character.handleEvent(CharacterEvent.START_ATTACKING); // Character starts attacking
-        character.handleEvent(CharacterEvent.STOP_ATTACKING);  // Character stops attacking
-        character.handleEvent(CharacterEvent.STOP_WALKING);   // Character stops walking and attacks
+        vendingMachine.handleEvent(VendingMachineEvent.INSERT_COIN); // Coins accepted. Select an item.
+        vendingMachine.handleEvent(VendingMachineEvent.CANCEL);      // No action in Idle state.
+        vendingMachine.handleEvent(VendingMachineEvent.SELECT_ITEM);  // Item selected. Confirm to dispense.
+        vendingMachine.handleEvent(VendingMachineEvent.DISPENSE_ITEM); // Item dispensed. Thank you!
     }
 }
 

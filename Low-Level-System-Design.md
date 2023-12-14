@@ -55,3 +55,113 @@
 - [Link 3](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/LLD%2Fl3.png?alt=media&token=d9cc0cff-eda1-4f43-8cd5-c17822ed7df1)
 
 # Design Patterns
+
+## State Machine
+
+```java
+// Define the CharacterState interface
+interface CharacterState {
+    void handleEvent(GameCharacter character, CharacterEvent event);
+}
+
+// Define the GameCharacter class
+class GameCharacter {
+    private CharacterState currentState;
+
+    public GameCharacter(CharacterState initialState) {
+        this.currentState = initialState;
+    }
+
+    public void setCurrentState(CharacterState state) {
+        this.currentState = state;
+    }
+
+    public void handleEvent(CharacterEvent event) {
+        currentState.handleEvent(this, event);
+    }
+}
+
+// Define the CharacterEvent enum
+enum CharacterEvent {
+    START_WALKING,
+    STOP_WALKING,
+    START_ATTACKING,
+    STOP_ATTACKING
+}
+
+// Define the IdleState class
+class IdleState implements CharacterState {
+    @Override
+    public void handleEvent(GameCharacter character, CharacterEvent event) {
+        switch (event) {
+            case START_WALKING:
+                character.setCurrentState(new WalkingState());
+                System.out.println("Character starts walking");
+                break;
+            case START_ATTACKING:
+                character.setCurrentState(new AttackingState());
+                System.out.println("Character starts attacking");
+                break;
+            default:
+                // No transition for other events in the IDLE state
+                break;
+        }
+    }
+}
+
+// Define the WalkingState class
+class WalkingState implements CharacterState {
+    @Override
+    public void handleEvent(GameCharacter character, CharacterEvent event) {
+        switch (event) {
+            case STOP_WALKING:
+                character.setCurrentState(new IdleState());
+                System.out.println("Character stops walking");
+                break;
+            case START_ATTACKING:
+                character.setCurrentState(new AttackingState());
+                System.out.println("Character starts attacking while walking");
+                break;
+            default:
+                // No transition for other events in the WALKING state
+                break;
+        }
+    }
+}
+
+// Define the AttackingState class
+class AttackingState implements CharacterState {
+    @Override
+    public void handleEvent(GameCharacter character, CharacterEvent event) {
+        switch (event) {
+            case STOP_ATTACKING:
+                character.setCurrentState(new IdleState());
+                System.out.println("Character stops attacking");
+                break;
+            case STOP_WALKING:
+                character.setCurrentState(new IdleState());
+                System.out.println("Character stops walking and attacks");
+                break;
+            default:
+                // No transition for other events in the ATTACKING state
+                break;
+        }
+    }
+}
+
+// Main class to demonstrate the character state machine
+public class CharacterStateMachineDemo {
+    public static void main(String[] args) {
+        // Create a game character with an initial state (Idle)
+        GameCharacter character = new GameCharacter(new IdleState());
+
+        // Simulate events
+        character.handleEvent(CharacterEvent.START_WALKING); // Character starts walking
+        character.handleEvent(CharacterEvent.STOP_WALKING);  // Character stops walking
+        character.handleEvent(CharacterEvent.START_ATTACKING); // Character starts attacking
+        character.handleEvent(CharacterEvent.STOP_ATTACKING);  // Character stops attacking
+        character.handleEvent(CharacterEvent.STOP_WALKING);   // Character stops walking and attacks
+    }
+}
+
+```

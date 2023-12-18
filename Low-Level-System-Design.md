@@ -178,3 +178,77 @@ public class VendingMachineStateMachineDemo {
 }
 
 ```
+
+## Observer
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+// Subject representing a messaging service
+class MessagingService {
+    private List<MessageObserver> messageObservers = new ArrayList<>();
+
+    public void addObserver(MessageObserver observer) {
+        messageObservers.add(observer);
+    }
+
+    public void removeObserver(MessageObserver observer) {
+        messageObservers.remove(observer);
+    }
+
+    // Simulating receiving a new message
+    public void receiveMessage(String sender, String message) {
+        System.out.println("Received message from " + sender + ": " + message);
+        notifyObservers(sender, message);
+    }
+
+    private void notifyObservers(String sender, String message) {
+        for (MessageObserver observer : messageObservers) {
+            observer.onMessageReceived(sender, message);
+        }
+    }
+}
+
+// Observer interface
+interface MessageObserver {
+    void onMessageReceived(String sender, String message);
+}
+
+// Concrete observer representing a user interface
+class UIUpdater implements MessageObserver {
+    @Override
+    public void onMessageReceived(String sender, String message) {
+        System.out.println("UI Updated: New message from " + sender + " - " + message);
+        // Logic to update the user interface with the new message
+    }
+}
+
+// Concrete observer representing a notification system
+class NotificationSystem implements MessageObserver {
+    @Override
+    public void onMessageReceived(String sender, String message) {
+        System.out.println("Notification: New message from " + sender);
+        // Logic to send a notification about the new message
+    }
+}
+
+public class MessagingAppExample {
+    public static void main(String[] args) {
+        MessagingService messagingService = new MessagingService();
+
+        UIUpdater uiUpdater = new UIUpdater();
+        NotificationSystem notificationSystem = new NotificationSystem();
+
+        messagingService.addObserver(uiUpdater);
+        messagingService.addObserver(notificationSystem);
+
+        messagingService.receiveMessage("John", "Hello there!");
+
+        messagingService.removeObserver(uiUpdater);
+
+        messagingService.receiveMessage("Alice", "How are you?");
+    }
+}
+
+```

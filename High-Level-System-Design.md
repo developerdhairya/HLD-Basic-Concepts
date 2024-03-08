@@ -251,17 +251,52 @@ Note:JWT is only BASE64-Encoded so it is very easy to decode it but you can't ge
 
 # `O-Auth 2.0`
 
-- O-Auth2.0 is a mechanism that allow third parties to gain limited access of a resources on a service on behalf of resource owner.
+- OAuth 2.0 is a powerful and secure framework that allows different applications to securely interact with each other on behalf of users without sharing sensitive credentials
 
-### Workflow
+### OAuth Grant Types
 
-- Client authorization request to authorization server and receives authorization grant if genuine user.
-- As authorization server has indentified the resource owner,client sends a request with authorization grant to authorization server to issue access token with limited access.
-- Access token is returned by authorization server to client.
-- Client sends this access token to its Web Server.*(Missing in image)*
-- Web server sends this access token with each request to resource server and successfully accesses resources posing as resource owner. 
+OAuth (Open Authorization) is a widely used framework for granting limited access to protected resources on the web. Different grant types exist to cater to various scenarios and security requirements. Here's an explanation of the differences between the five main OAuth grant types: Authorization Code, Implicit, Client Credentials, Password Credentials, and Refresh.
 
-![](https://i.ytimg.com/vi/CPbvxxslDTU/maxresdefault.jpg)
+1. **Authorization Code**:
+   - **Use Case**: This grant type is typically used in scenarios where the client (application) needs to access resources on behalf of the user, typically in a web application where the client has its own backend server.
+   - **Flow**: 
+     1. The client redirects the user to the authorization server.
+     2. The user authenticates and approves the client's request.
+     3. The authorization server redirects the user back to the client with an authorization code.
+     4. The client exchanges the authorization code for an access token by sending a request to the authorization server's token endpoint, along with client credentials.
+   - **Security**: Provides an additional layer of security by keeping sensitive information like access tokens out of the browser and using short-lived authorization codes.
+
+2. **Implicit**:
+   - **Use Case**: This grant type is suitable for clients implemented in a browser using JavaScript. It's used in scenarios where the client-side applications need to obtain access tokens directly.
+   - **Flow**:
+     1. The client redirects the user to the authorization server.
+     2. The user authenticates and approves the client's request.
+     3. The authorization server redirects the user back to the client with an access token included in the URL fragment.
+   - **Security**: Less secure compared to Authorization Code because access tokens are exposed to the browser, increasing the risk of token leakage.
+
+3. **Client Credentials**:
+   - **Use Case**: This grant type is used when the client itself needs to access protected resources it owns, rather than on behalf of a user.
+   - **Flow**:
+     1. The client sends its own credentials directly to the authorization server.
+     2. The authorization server validates the client credentials and issues an access token.
+   - **Security**: Suitable for machine-to-machine communication but lacks the ability to tie requests to individual users.
+
+4. **Password Credentials**:
+   - **Use Case**: This grant type is suitable when the client is trusted with the user's credentials.
+   - **Flow**:
+     1. The user's credentials (username and password) are directly sent to the authorization server by the client.
+     2. The authorization server validates the credentials and issues an access token.
+   - **Security**: Riskier compared to other grant types because it involves the client handling the user's credentials directly.
+
+5. **Refresh Token**:
+   - **Use Case**: Used to obtain a new access token when the current one expires, without requiring the user to re-authenticate.
+   - **Flow**:
+     1. The client sends a refresh token along with a token refresh request to the authorization server.
+     2. The authorization server validates the refresh token and issues a new access token.
+   - **Security**: Refresh tokens are long-lived and should be kept secure, as they can be used to obtain new access tokens without the user's involvement.
+
+Each grant type has its own use cases, security considerations, and flows, allowing OAuth to be flexible and adaptable to various application scenarios.
+
 
 # `Nginx as Reverse Proxy`
 - ![](https://firebasestorage.googleapis.com/v0/b/boom-b9a18.appspot.com/o/Screenshot%20from%202023-03-19%2015-05-08.png?alt=media&token=0fea203c-5c22-4dba-8c7f-85ba2e41583b)
